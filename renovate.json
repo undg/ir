@@ -1,0 +1,74 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "groupName": "react core",
+      "packageNames": ["@vitejs/plugin-react", "react", "react-dom", "@types/react", "@types/react-dom"]
+    },
+    {
+      "groupName": "unit testing",
+      "packagePatterns": ["@testing-library", "vitest", "jsdom", "@vitest/coverage-istanbul"],
+      "automerge": true
+    },
+    {
+      "groupName": "testing-library",
+      "packagePatterns": [
+        "@testing-library/react-hooks",
+        "@testing-library/dom",
+        "@testing-library/jest-dom",
+        "@testing-library/react",
+        "@testing-library/user-event"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "e2e testing",
+      "packageNames": ["cypress", "@testing-library/cypress"],
+      "automerge": true
+    },
+    {
+      "groupName": "linters",
+      "packagePatterns": [
+        "eslint",
+        "prettier",
+        "stylelint",
+        "prettier-plugin-tailwindcss",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "@nabla/vite-plugin-eslint",
+        "eslint",
+        "eslint-config-airbnb",
+        "eslint-config-airbnb-base",
+        "eslint-config-airbnb-typescript",
+        "eslint-config-prettier",
+        "eslint-plugin-cypress",
+        "eslint-plugin-eslint-comments",
+        "eslint-plugin-import",
+        "eslint-plugin-jsx-a11y",
+        "eslint-plugin-react",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-testing-library"
+      ],
+      "automerge": true
+    },
+    {
+      "groupName": "build tools",
+      "packageNames": [
+        "@tailwindcss/forms",
+        "autoprefixer",
+        "postcss",
+        "tailwind-merge",
+        "tailwindcss",
+        "tailwindcss-animate",
+        "typescript",
+        "vite"
+      ]
+    }
+  ]
+}
